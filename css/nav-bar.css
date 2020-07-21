@@ -18,7 +18,7 @@
 }
 
 .nav .nav__list-link{
-    position: relative;
+    position: relative; /* 이게 있어야 badge가 고정이 됨*/
 }
 
 .nav .nav__badge{
