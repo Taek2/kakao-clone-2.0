@@ -1,14 +1,24 @@
-.chats-body{
-    padding: 0px;
+.header-wrapper{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    background-color: white;
+    padding: 5px 0px;
+    box-shadow: 
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
 }
+
 .chats-body .header, .chats-body .status-bar{
     padding: 0px 20px;
 }
 
 
-.chat-screen{
+.chats-body{
+    padding: 0px;
     background-image: url("../images/chatBg.png");
-    min-height: 100vh;
+    min-height: 1000vh;
+    padding-top: 100px;
 }
 
 .chat-screen .chat__messages{
@@ -66,10 +76,9 @@
     font-weight: 600;
     font-size: 12px;
 }
-.chat__write{
+.chat__write-container{
     position: fixed;
-    bottom: 50px;
-    width: 80%;
+    bottom: 0px;
     display: flex;
     align-items: center;;
     justify-content: space-between;
@@ -78,12 +87,38 @@
     right:0;
     background-color: #fcfcfc;
     padding:0px 20px;
-    border-radius: 40px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2), 0px -4px 10px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2), 0px -4px 10px rgba(0, 0, 0, 0.2);*/
 }
 
-.chat__write i{
-    font-size : 22px;
+.chat__write{
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0;
+    padding: 20px 60px;
+    width: 100%;
+    border:none;
+    font-size: 14px;
+}
+
+.chat__write:focus{
+    outline: none;
+}
+.chat__icon{
+    font-size : 18px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.chat__icon-left{
+    position: absolute;
+}
+
+.chat__icon-right{
+    position: absolute;
+    right: 10px;
+}
+
+.chat__write:focus ~.chat__icon{
+    opacity: 0;
 }
 
 .chat__write-column:nth-child(2){
@@ -96,10 +131,6 @@
     border:none;
     font-size: 14px;
 }
-
-/*.chat__write-column input:focus{
-    outline: none;
-}*/
 
 .message .message__bubble{
     background-color: white;
